@@ -13,6 +13,7 @@ class MicropostsController extends Controller
             $user = \Auth::user();
             // ユーザの投稿の一覧を作成日時の降順で取得
             $microposts = $user->microposts()->orderBy('created_at', 'desc')->paginate(10);
+            print(gettype($microposts));
             
             $data = [
                 'user' => $user,
